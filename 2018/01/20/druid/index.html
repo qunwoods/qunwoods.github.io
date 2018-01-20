@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Introduction to Indexing, Aggregation and Querying in Druid（理解）Introduction to Indexing, Aggregation and Querying in Druid | theza.chGitHub - zcox/druid-pageviews: Simple example of indexing pageview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://qunwoods.com/2018/01/20/hello-world/index.html">
+<meta property="og:title" content="druid">
+<meta property="og:url" content="http://qunwoods.com/2018/01/20/druid/index.html">
 <meta property="og:site_name" content="一只写代码的废喵">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-01-20T03:53:42.000Z">
+<meta property="og:description" content="Introduction to Indexing, Aggregation and Querying in Druid（理解）Introduction to Indexing, Aggregation and Querying in Druid | theza.chGitHub - zcox/druid-pageviews: Simple example of indexing pageview">
+<meta property="og:updated_time" content="2018-01-20T06:13:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="druid">
+<meta name="twitter:description" content="Introduction to Indexing, Aggregation and Querying in Druid（理解）Introduction to Indexing, Aggregation and Querying in Druid | theza.chGitHub - zcox/druid-pageviews: Simple example of indexing pageview">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://qunwoods.com/2018/01/20/hello-world/"/>
+  <link rel="canonical" href="http://qunwoods.com/2018/01/20/druid/"/>
 
 
 
 
 
-  <title>Hello World | 一只写代码的废喵</title>
+  <title>druid | 一只写代码的废喵</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qunwoods.com/2018/01/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://qunwoods.com/2018/01/20/druid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qunwoods">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">druid</h1>
         
 
         <div class="post-meta">
@@ -260,7 +260,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T11:53:42+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T14:12:43+08:00">
                 2018-01-20
               </time>
             
@@ -298,15 +298,27 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="Introduction-to-Indexing-Aggregation-and-Querying-in-Druid（理解）"><a href="#Introduction-to-Indexing-Aggregation-and-Querying-in-Druid（理解）" class="headerlink" title="Introduction to Indexing, Aggregation and Querying in Druid（理解）"></a>Introduction to Indexing, Aggregation and Querying in Druid（理解）</h1><p><a href="https://zcox.wordpress.com/2015/04/05/introduction-to-indexing-aggregation-and-querying-in-druid/" target="_blank" rel="noopener">Introduction to Indexing, Aggregation and Querying in Druid | theza.ch</a><br><a href="https://github.com/zcox/druid-pageviews" target="_blank" rel="noopener">GitHub - zcox/druid-pageviews: Simple example of indexing pageview events in Druid</a></p>
+<p>#druid</p>
+<h2 id="time-series-databases"><a href="#time-series-databases" class="headerlink" title="time-series databases"></a>time-series databases</h2><ul>
+<li>counting once and store the results（计数一次，存储结果）</li>
+<li>pre-compute different values for query</li>
+<li><em>counting at indexing time</em><h2 id="分步理解"><a href="#分步理解" class="headerlink" title="分步理解"></a>分步理解</h2><h3 id="Load-data"><a href="#Load-data" class="headerlink" title="Load data"></a>Load data</h3></li>
+<li>sending an HTTP POST request to the Druid Indexing Service（index spec）<br>输入与输出：<br>[image:A24CADB8-4A4D-4D88-ACDB-A4579BE868C5-798-00000E18423D2A2D/0BFFE817-2E49-40DD-8B66-3EFD27C1CB88.png]<br>[image:991BE188-4AB9-4459-81F1-1ECCF6A9603E-798-00000E1842C9244C/UsersyqfLibraryContainersnet.shinyfrog.bearDataDocumentsApplication DataLocal FilesNote Images4F8E47C7-9CEF-45A6-A329-2E87A9F4DBC1-40312-00011FA960E913EB07694632-721E-43E4-9CD2-D0D0766A57C5.jpg]<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3></li>
+<li>the location of the data file</li>
+<li>the size of the segment and index periods</li>
+<li>the dimensions we want to use</li>
+<li>metrics (or aggregations) we want Druid to create<h3 id="group-and-generate-row"><a href="#group-and-generate-row" class="headerlink" title="group and  generate row"></a>group and  generate row</h3></li>
+<li>queryGranularity(index period)<br>Druid在同一个小时内将事件分组（通过将queryGranularity设置为HOUR），并在该行中记录组中事件的数量（即metricsSpec中的计数）。</li>
+<li>row——the <em>aggregate</em> of all of the events within <em>the same index period</em> with <em>the same dimension values</em><h3 id="segment"><a href="#segment" class="headerlink" title="segment"></a>segment</h3></li>
+<li>combine all of the rows in the index periods(segmentGranularity) into one big file called a segment file<h3 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h3></li>
+</ul>
+<p>[image:AFCC673B-7BD0-467A-ADD8-DCB1BF7A27F8-798-00000E184286C27A/73399254-161B-4784-BE4D-146816BE226A.png]</p>
+<ul>
+<li>设置queryGranularity = HOUR，segmentGranularity = DAY<br>（dimension为空）<br>[image:4D63A146-8B18-4C81-8929-932C97A00E8C-798-00000E18426579E5/5B879490-003D-49FC-8770-7B38F12E736B.png]<br>每小时一行记录，每天的数据为一个segment。</li>
+<li>设置dimention为url<br>[image:44BE6891-43A4-4C05-8E13-3639558690AA-798-00000E1842A88574/EED38A3D-09DC-41FC-A3B8-AEDE8E0BEB57.png]<br>相同的index period和维度为一行记录，每天的数据为一个segment</li>
+<li><em>druid根据维度做聚合，如果维度越多，我们可以查询的数据细节就越多</em>。极端情况下设置对所有维度聚合，那么导入数据时druid不做任何工作，对立面是druid做所有的聚合工作（查询时不需要做聚合）<br>/理解：对于以上例子，如果按照dimension = url导入，然后查询时没有设置url，那么查询时需要进一步对每个小时的数据进行聚合/<br>（<em>基于查询设置druid需要做的工作</em>）<h3 id="re-index-the-data（add-another-dimension）"><a href="#re-index-the-data（add-another-dimension）" class="headerlink" title="re-index the data（add another dimension）"></a>re-index the data（add another dimension）</h3></li>
+</ul>
 
       
     </div>
@@ -331,15 +343,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/20/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/20/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -453,7 +465,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-to-Indexing-Aggregation-and-Querying-in-Druid（理解）"><span class="nav-number">1.</span> <span class="nav-text">Introduction to Indexing, Aggregation and Querying in Druid（理解）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#time-series-databases"><span class="nav-number">1.1.</span> <span class="nav-text">time-series databases</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分步理解"><span class="nav-number">1.2.</span> <span class="nav-text">分步理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Load-data"><span class="nav-number">1.2.1.</span> <span class="nav-text">Load data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON"><span class="nav-number">1.2.2.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#group-and-generate-row"><span class="nav-number">1.2.3.</span> <span class="nav-text">group and  generate row</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#segment"><span class="nav-number">1.2.4.</span> <span class="nav-text">segment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#An-example"><span class="nav-number">1.2.5.</span> <span class="nav-text">An example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#re-index-the-data（add-another-dimension）"><span class="nav-number">1.2.6.</span> <span class="nav-text">re-index the data（add another dimension）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

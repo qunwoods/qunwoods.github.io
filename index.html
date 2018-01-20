@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -217,6 +217,146 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qunwoods.com/2018/01/20/druid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwoods">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一只写代码的废喵">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/20/druid/" itemprop="url">druid</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T14:12:43+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Introduction-to-Indexing-Aggregation-and-Querying-in-Druid（理解）"><a href="#Introduction-to-Indexing-Aggregation-and-Querying-in-Druid（理解）" class="headerlink" title="Introduction to Indexing, Aggregation and Querying in Druid（理解）"></a>Introduction to Indexing, Aggregation and Querying in Druid（理解）</h1><p><a href="https://zcox.wordpress.com/2015/04/05/introduction-to-indexing-aggregation-and-querying-in-druid/" target="_blank" rel="noopener">Introduction to Indexing, Aggregation and Querying in Druid | theza.ch</a><br><a href="https://github.com/zcox/druid-pageviews" target="_blank" rel="noopener">GitHub - zcox/druid-pageviews: Simple example of indexing pageview events in Druid</a></p>
+<p>#druid</p>
+<h2 id="time-series-databases"><a href="#time-series-databases" class="headerlink" title="time-series databases"></a>time-series databases</h2><ul>
+<li>counting once and store the results（计数一次，存储结果）</li>
+<li>pre-compute different values for query</li>
+<li><em>counting at indexing time</em><h2 id="分步理解"><a href="#分步理解" class="headerlink" title="分步理解"></a>分步理解</h2><h3 id="Load-data"><a href="#Load-data" class="headerlink" title="Load data"></a>Load data</h3></li>
+<li>sending an HTTP POST request to the Druid Indexing Service（index spec）<br>输入与输出：<br>[image:A24CADB8-4A4D-4D88-ACDB-A4579BE868C5-798-00000E18423D2A2D/0BFFE817-2E49-40DD-8B66-3EFD27C1CB88.png]<br>[image:991BE188-4AB9-4459-81F1-1ECCF6A9603E-798-00000E1842C9244C/UsersyqfLibraryContainersnet.shinyfrog.bearDataDocumentsApplication DataLocal FilesNote Images4F8E47C7-9CEF-45A6-A329-2E87A9F4DBC1-40312-00011FA960E913EB07694632-721E-43E4-9CD2-D0D0766A57C5.jpg]<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3></li>
+<li>the location of the data file</li>
+<li>the size of the segment and index periods</li>
+<li>the dimensions we want to use</li>
+<li>metrics (or aggregations) we want Druid to create<h3 id="group-and-generate-row"><a href="#group-and-generate-row" class="headerlink" title="group and  generate row"></a>group and  generate row</h3></li>
+<li>queryGranularity(index period)<br>Druid在同一个小时内将事件分组（通过将queryGranularity设置为HOUR），并在该行中记录组中事件的数量（即metricsSpec中的计数）。</li>
+<li>row——the <em>aggregate</em> of all of the events within <em>the same index period</em> with <em>the same dimension values</em><h3 id="segment"><a href="#segment" class="headerlink" title="segment"></a>segment</h3></li>
+<li>combine all of the rows in the index periods(segmentGranularity) into one big file called a segment file<h3 id="An-example"><a href="#An-example" class="headerlink" title="An example"></a>An example</h3></li>
+</ul>
+<p>[image:AFCC673B-7BD0-467A-ADD8-DCB1BF7A27F8-798-00000E184286C27A/73399254-161B-4784-BE4D-146816BE226A.png]</p>
+<ul>
+<li>设置queryGranularity = HOUR，segmentGranularity = DAY<br>（dimension为空）<br>[image:4D63A146-8B18-4C81-8929-932C97A00E8C-798-00000E18426579E5/5B879490-003D-49FC-8770-7B38F12E736B.png]<br>每小时一行记录，每天的数据为一个segment。</li>
+<li>设置dimention为url<br>[image:44BE6891-43A4-4C05-8E13-3639558690AA-798-00000E1842A88574/EED38A3D-09DC-41FC-A3B8-AEDE8E0BEB57.png]<br>相同的index period和维度为一行记录，每天的数据为一个segment</li>
+<li><em>druid根据维度做聚合，如果维度越多，我们可以查询的数据细节就越多</em>。极端情况下设置对所有维度聚合，那么导入数据时druid不做任何工作，对立面是druid做所有的聚合工作（查询时不需要做聚合）<br>/理解：对于以上例子，如果按照dimension = url导入，然后查询时没有设置url，那么查询时需要进一步对每个小时的数据进行聚合/<br>（<em>基于查询设置druid需要做的工作</em>）<h3 id="re-index-the-data（add-another-dimension）"><a href="#re-index-the-data（add-another-dimension）" class="headerlink" title="re-index the data（add another dimension）"></a>re-index the data（add another dimension）</h3></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -260,7 +400,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T12:25:31+08:00">
                 2018-01-20
@@ -431,7 +571,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T11:53:42+08:00">
                 2018-01-20
@@ -563,8 +703,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">articles</span>
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -614,7 +754,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -622,7 +762,7 @@
 
 
 
-  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
